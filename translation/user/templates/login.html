@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block 'title'%}
+    登录页面
+{% endblock %}
+{% block 'form'%}
+    <form action="{% url 'login' %}" method="post">
+        {%csrf_token%}
+        <p>
+            <span>姓名:<input type="text" name='uname'　id='name'></span>
+            <span class='prompt'>{{manage}}</span>
+        </p>
+        <p>
+            密码:<input type="password" name='upwd' id='pwd'>
+        </p>
+        <p id = 'a'>
+            <button type="submit">登录</button>
+        </p>
+    </form>
+    <p id='register'>
+        <button onclick="register()">注册</button>
+    </p>
+{% block 'script'%}
+    <script>
+        function register(){
+            this.location.href = '{% url "register"%}'
+        }
+    </script>
+{% endblock %}
+{% endblock %}

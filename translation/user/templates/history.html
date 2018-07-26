@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% block 'title'%}
+    历史查询页面
+{% endblock %}
+{% block 'form' %}
+    <p style="height:110px;line-height:110px;">{{history}}</p>
+    <form action="{% url 'history'%}" method="post">
+    {% csrf_token %}
+        {% for i in user %}
+            <table>
+                <tr>
+                    <td style="height:20px;width:150px;line-height:20px;font-size:15px;">用户名:{{i.uname}}</td>
+                    <td style="height:20px;width:150px;line-height:20px;font-size:15px;">单词:{{i.uword}}</td>
+                    <td style="width:300px;">查询时间:{{i.time}}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    <p id='clearhistory'>
+        <button>清除记录</button>
+    </p>
+    <form action=""></form>
+    <button onclick='exit()'>返回查询</button>
+{% endblock %}
+{% block 'script' %}
+    <script>
+        function exit(){
+            this.location.href='{% url "page" %}';
+            // confirm('你好')
+        }
+    </script>
+{% endblock %}

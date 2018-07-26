@@ -1,0 +1,56 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family:'微软雅黑';
+}
+.prompt{
+    color:red;
+}
+td{
+    width:300px;
+    line-height:20px;
+    font-size:15px;
+}
+#register{
+    position:absolute;
+    margin-left:325px;
+    margin-top:-35px;
+}
+#reset{
+    position:absolute;
+    margin-left:340px;
+    margin-top:-35px;
+}
+#history{
+    position:absolute;
+    margin-top:-35px;
+    margin-left:383px;
+}
+#clearhistory{
+    position:absolute;
+    margin-top:0px;
+    margin-left:383px;
+}
+div td{
+    width:120px;
+    font-family:none;
+}
+#submit{
+    position:relative;
+    left:50px;
+    top:0px;
+}
+.button{
+    position:relative;
+    top:35px;
+    left:0px;
+}
+#button{
+    position:relative;
+    top:0px;
+    left:80px;
+}
+#a{
+    position:relative;
+    left:35px;
+}

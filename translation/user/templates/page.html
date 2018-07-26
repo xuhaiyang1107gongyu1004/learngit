@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block 'title'%}
+    主页页面
+{% endblock %}
+{% block 'form'%}
+    <form action="{% url 'page'%}" method="post">
+    {% csrf_token %}
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <span>请输入查询导图:</span>
+                    </td>
+                    <td>
+                        <select name="FY">
+                            <option value="four">四字成语</option>
+                            <option value="five">五字成语</option>
+                            <option value="six">六字成语</option>
+                            <option value="eight">八字成语</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>请输入查询单词:</span>
+                    </td>
+                    <td>
+                        <p><input type="text" name='word'></p>
+                        <span class='prompt'>{{message}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>查询结果:</span>
+                    </td>
+                    <td>
+                        <input type="textarea" value="{{words}}">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <p class='button'>
+            <button type='submit'>查询</button>
+        </p>
+        <p id='button'>
+            <button type='reset'>重置</button>
+        </p>
+    </form>
+{% endblock %}
+{% block 'script'%}
+    <p id='history'>
+        <button onclick="history()">历史查询</button>
+    </p>
+    <script>
+        function history(){
+            this.location.href = "{% url 'history'%}";
+        }
+    </script>
+{% endblock %}

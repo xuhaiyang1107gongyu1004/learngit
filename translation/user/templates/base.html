@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta charset="UTF-8">
+        <title>
+        {% block 'title' %}
+            登录页面
+        {% endblock %}
+        </title>
+</head>
+<body>
+<div style="background-image:url({% static 'img/underlying.jpg'%});background-size:100% 120%;background-repeat:no-repeat;">
+{% block 'form'%}
+{% endblock %}
+</div>
+<!-- <div style="height:120px;">
+    <p style="height:115px;background-image:url({% static 'img/timg.jpg'%});background-size:100% 120%;background-repeat:no-repeat;"></span>
+    <p></p>
+</div> -->
+{% block 'script' %}
+{% endblock %}
+</body>
+</html>

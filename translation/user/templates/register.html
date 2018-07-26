@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block 'title'%}
+    注册页面
+{% endblock %}
+{% block 'form'%}
+    <form action="{% url 'register' %}" method="post">
+    {%csrf_token%}
+        <p>
+            <span>用户名:<input type="text" name='uname'　id='name'></span>
+            <span class='prompt'>{{name}}</span>
+        </p>
+        <p>
+            <span>密码: &nbsp;&nbsp;&nbsp;<input type="password" name='upwd' id='pwd'></span>
+            <span class='prompt'>{{pwd}}</span>
+        </p>
+        <p>
+            <span>电话: &nbsp;&nbsp;&nbsp;<input type="text" name='uphone' id='phone'></span>
+            <span class='prompt'>{{phone}}</span>
+        </p>
+        <p>
+            邮箱: &nbsp;&nbsp;&nbsp;<input type="email" name='uemail' id=email>
+        </p>
+        <p id='submit'>
+            <button type="submit">提交</button>
+        </p>
+        <p id='reset'>
+            <button type="reset">重置</button>
+        </p>
+    </form>
+{% endblock %}
+</body>
+</html>
